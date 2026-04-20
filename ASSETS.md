@@ -8,14 +8,11 @@ This file will be updated as assets are added to the project.
 
 ## Art
 
-### *(No assets imported yet — template below for when you add them)*
-
-**Example format:**
-- **File:** `player_wisp.png`
-- **Source:** [URL to original source]
-- **Author:** [Artist name]
-- **License:** CC0 / CC-BY 4.0 / OFL / Unity Asset Store Standard EULA / etc.
-- **Used for:** Player character sprite
+### Pixel Art Character Template by Deymoon
+- **Source:** https://deymoon.itch.io/character-template
+- **Author:** Deymoon
+- **License:** Free to use with credit, no redistribution
+- **Used for:** Player character sprite (idle, run, jump, and other animations)
 
 ### Suggested free asset sources for this project
 - [Kenney.nl](https://kenney.nl/) — generous CC0 2D packs
