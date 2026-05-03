@@ -1,10 +1,9 @@
 Lucid
 A one-button auto-runner set in the soft, drifting logic of a dream.
-Status Unity License
 About
 The world in Lucid breathes between two colors, pink and teal, and so do you. Every jump flips your color. Obstacles only hurt you when their color doesn't match yours, so a single press of the space bar has to answer two questions at once: where do I want to be, and what color do I need to be when I land?
 It's a small game about the almost-control of a lucid dream. You can feel the rhythm of the world. You can't quite slow it down.
-Roadmap (Next Two Weeks)
+Roadmap 
 Development is focused on three pillars: the color-flip core loop, game feel, and a cohesive dream aesthetic.
 The core loop runs on chunk-based procedural generation. Pre-designed level segments stream in ahead of the player and despawn behind, pulling from progressively harder pools as survival time grows. Each chunk contains a mix of three obstacle types: ground spikes, low-flying hazards that force a duck, and wide gaps that demand longer-held jumps. Each is tagged with a color that must match the player's current state to be safely passable. Obstacle data is backed by ScriptableObjects so new hazard variants can be tuned and added from the Inspector.
 For game feel, every interaction gets layered feedback: a satisfying squash on landing, a particle burst that carries the player's current color, pitch-laddered pickup sounds, subtle hitstop and screen shake on death, and camera smoothing that sells the forward momentum. A looping soundtrack ties the experience together, with a stretch goal of syncing obstacle spawn timing to the beat.
@@ -30,25 +29,48 @@ C#
 Unity Post-Processing
 
 Project Structure
+Current state of the repository:
+Assets/
+├── Pixel Art Character Template/   # Animation sets for the player
+│   ├── Idle/
+│   ├── Run/
+│   ├── Jump/
+│   ├── Crouch-Idle/
+│   ├── Crouch-Walk/
+│   ├── Air-Spin/
+│   ├── Land/
+│   ├── Roll/
+│   ├── Walk/
+│   ├── Wall-Land/
+│   ├── Wall-Slide/
+│   ├── Ledge-Climb/
+│   └── Ledge-Grab/
+├── Scenes/
+│   └── SampleScene.unity
+└── PlayerController.cs
+Target structure once asset organization and core systems are in place:
 Assets/
 ├── Art/              # Sprites, tiles, UI, background layers
 ├── Audio/            # Music, SFX
 ├── Data/             # ScriptableObject instances (obstacles, chunks)
 ├── Prefabs/
-│   ├── Chunks/       # Level chunk prefabs
-│   ├── Obstacles/    # Spike, flyer, gap-marker
-│   └── Collectibles/ # Pulse-orb
+│   ├── Chunks/
+│   ├── Obstacles/
+│   └── Collectibles/
 ├── Scenes/
 ├── Scripts/
-│   ├── Player/       # PlayerController, ColorState
-│   ├── Spawning/     # ChunkManager, ChunkData
-│   ├── Obstacles/    # ObstacleData (SO) + behaviors
+│   ├── Player/
+│   ├── Spawning/
+│   ├── Obstacles/
 │   ├── Collectibles/
-│   ├── Managers/     # GameManager, AudioManager, ScoreManager
-│   └── FX/           # CameraShake, HitStop, ColorFlipFX
-└── Settings/         # URP, post-processing profiles
+│   ├── Managers/
+│   └── FX/
+└── Settings/
 Status
 Active development as the final project for CGDD 109.
 Credits
-Full asset attribution lives in ASSETS.md.
-Source code: MIT License (see [`LICENSE`](./LICENSE)). Third-party assets retain their original licenses — see `ASSETS.md`.
+Player character art
+Pixel Art Character Template by Deymoon. Source: https://deymoon.itch.io/character-template
+All other assets, scripts, and scene setup are original work for this project. Additional asset attribution will be added here as new assets are sourced.
+License
+Source code: MIT License (see LICENSE). Third-party assets retain their original licenses.
